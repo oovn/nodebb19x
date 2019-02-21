@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+rm -rf NodeBB
+
+curl -L https://github.com/NodeBB/NodeBB/tarball/v1.9.x | tar xz
+mv NodeBB-* NodeBB
+
+cp ok/package.json NodeBB/package.json
+tar xvfz ok/build.tar.xz NodeBB/build
+cp fix/quick-search-results.tpl NodeBB/src/views/partials/quick-search-results.tpl
